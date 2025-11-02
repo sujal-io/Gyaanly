@@ -57,7 +57,7 @@ cloudinary.config({
     });
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Backend is running!')
 })
 
 app.listen(port, () => {
