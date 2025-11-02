@@ -1,0 +1,55 @@
+/* index.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+/* Font classes */
+.font-navbar {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-section {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-footer {
+  font-family: 'Fredoka', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @apply bg-linear-to-r from-[#2C3E50] to-[#4CA1AF] min-h-screen;
+}
+
+/* Slick Arrows positioning */
+.slick-prev, .slick-next {
+  z-index: 10;  /* make sure arrows appear above slides */
+}
+
+.slick-prev {
+  left: 10px !important;
+}
+
+.slick-next {
+  right: 10px !important;
+}
+
+/* Mobile: show only one clean card and hide arrows */
+@media (max-width: 639px) {
+  .custom-slider .slick-arrow {
+    display: none !important;
+  }
+  .custom-slider .slick-list {
+    margin: 0 !important;
+  }
+  .custom-slider .slick-slide {
+    padding: 0 4px; /* small gutter */
+  }
+}
+
+
+
+  
