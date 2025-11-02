@@ -41,9 +41,7 @@ console.log("courses:",courses);
     const fetchCourses = async () => {
       try {
         setIsLoading(true)
-        const response = await axios.get(`${BACKEND_URL}/course/courses`, {
-          withCredentials: true,
-        });
+        const response = await axios.get(`${BACKEND_URL}/course/courses`);
         setCourses(response.data.courses || []);
         setIsLoading(false)
       } catch (err) {

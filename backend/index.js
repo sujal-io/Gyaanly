@@ -22,14 +22,22 @@ app.use
 }));
 app.use(express.urlencoded({ extended: true })); 
 
-app.use(cors({
-  origin:process.env.FRONTEND_URL,
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-})
+const allowedOrigins = [
+  process.env.FRONTEND_URL,            // prod
+  'http://localhost:5173',             // Vite dev (adjust if needed)
+  'http://127.0.0.1:5173',             // Alternate localhost
+].filter(Boolean);
 
-);
+app.use(cors({
+  origin: (origin, cb) => {
+    if (!origin) return cb(null, true); // allow non-browser tools
+    cb(null, allowedOrigins.includes(origin));
+  },
+  credentials: true,
+  methods: ['GET','POST','PUT','DELETE','OPTIONS'],
+  allowedHeaders: ['Content-Type','Authorization'],
+}));
+
 
 const port = process.env.PORT || 3000
 const DB_URI = process.env.MONGO_URI;

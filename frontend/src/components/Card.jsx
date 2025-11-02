@@ -23,9 +23,7 @@ function Card() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get(`${BACKEND_URL}/course/courses`, {
-          withCredentials: true,
-        });
+        const response = await axios.get(`${BACKEND_URL}/course/courses`);
         setCourses(response.data.courses || []);
       } catch (err) {
         console.error("Error fetching courses:", err);
