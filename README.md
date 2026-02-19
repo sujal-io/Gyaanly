@@ -75,6 +75,5 @@ Gyaanly follows a three-tier architecture:
 
 The frontend communicates with the backend through RESTful APIs for real-time data exchange and secure operations.
 
----
 
 
