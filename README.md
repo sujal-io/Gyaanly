@@ -77,9 +77,4 @@ The frontend communicates with the backend through RESTful APIs for real-time da
 
 ---
 
-## Installation and Setup
 
-### Clone the Repository
-```bash
-git clone https://github.com/deacon1105/Gyaanly
-cd Gyaanly
